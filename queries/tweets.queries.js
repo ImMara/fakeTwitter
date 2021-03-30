@@ -8,3 +8,7 @@ exports.createTweet = (tweet) => {
     const newTweet = new Tweet(tweet);
     return newTweet.save();
 }
+
+exports.deleteTweet = (tweetid) =>{
+    return Tweet.findByIdAndDelete(tweetid).exec();
+}
