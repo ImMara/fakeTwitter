@@ -4,12 +4,14 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon app.js",
+    "start": "NODE_ENV=development nodemon app.js",
+    "start:prod": "NODE_ENV=producrtion nodemon app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "errorhandler": "^1.5.1",
     "express": "^4.16.4",
     "mongoose": "^5.12.2",
     "morgan": "^1.9.1",
