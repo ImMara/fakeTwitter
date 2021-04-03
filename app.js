@@ -3,6 +3,7 @@ const morgan = require('morgan');
 const path = require('path');
 require('./database');
 const app = express();
+exports.app = app;
 const port = process.env.PORT || 3000;
 const index = require('./routes');
 const errorHandler = require('errorhandler');
