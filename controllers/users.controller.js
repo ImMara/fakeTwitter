@@ -1,7 +1,7 @@
 const { createUser }  = require('../queries/users.queries');
 
 exports.signupForm = ( req , res , next ) =>{
-    res.render('users/user-form',{ error : null });
+    res.render('users/user-form',{ error : null , isAuthenticated: req.isAuthenticated(), currentUser: req.user});
 }
 exports.signup = async ( req , res , next ) =>{
     const body = req.body ;
@@ -9,7 +9,7 @@ exports.signup = async ( req , res , next ) =>{
         const user = await createUser(body);
         res.redirect('/');
     }catch (e) {
-        res.render('uses/user-form' , { errors : [ e.message ]})
+        res.render('uses/user-form' , { errors : [ e.message ], isAuthenticated: req.isAuthenticated(), currentUser: req.user})
     }
 
 }
