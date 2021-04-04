@@ -11,8 +11,8 @@ app.use(session({
         httpOnly: false,
         maxAge: 1000 * 60 * 60 * 24 * 14
     },
-    store: MongoStore.create({
-        clientPromise: clientPromise.then((m) => m.connection.getClient()),
+    store: new MongoStore({
+        mongoUrl:'mongodb+srv://mara:test@cluster0.xyi9t.mongodb.net/twitter?retryWrites=true',
         ttl: 60 * 60 * 24 * 14,
     }),
 }));
