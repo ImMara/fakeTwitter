@@ -1,7 +1,8 @@
+script(src="/javascripts/profile.js")
 div(class="profile-container d-flex flex-column mr-3 bg-white")
-    form(class="d-flex flex-row justify-content-center align-items-center mt-3" action="/users/update/image" method="post" enctype="multipart/form-data")
-        input(type="file" name='avatar' class="d-none")
-        img(src="/images/default-profile.webp" class="img-fluid rounded-circle")
+    form(id="form-container" class="d-flex flex-row justify-content-center align-items-center mt-3" action="/users/update/image" method="post" enctype="multipart/form-data")
+        input(id="input-avatar" type="file" name='avatar' class="d-none")
+        img(id="image-profile" src="/images/default-profile.webp" class="img-fluid rounded-circle")
     div(class="d-flex flex-row justify-content-center align-items-center my-3")
         p= `${currentUser.username} (${ currentUser.local.email })`
     div(class="d-flex flex-row justify-content-center align-items-center my-3 text-center")
