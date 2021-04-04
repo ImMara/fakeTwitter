@@ -1,5 +1,6 @@
 div(class="profile-container d-flex flex-column mr-3 bg-white")
-    div(class="d-flex flex-row justify-content-center align-items-center mt-3")
+    form(class="d-flex flex-row justify-content-center align-items-center mt-3" action="/users/update/image" method="post" enctype="multipart/form-data")
+        input(type="file" name='avatar' class="d-none")
         img(src="/images/default-profile.webp" class="img-fluid rounded-circle")
     div(class="d-flex flex-row justify-content-center align-items-center my-3")
         p= `${currentUser.username} (${ currentUser.local.email })`
@@ -8,7 +9,7 @@ div(class="profile-container d-flex flex-column mr-3 bg-white")
             p
             strong Tweet
             br
-            span(class="text-primary")= tweets && tweets.length
+            span(class="text-primary")= tweets && tweets.length ? tweets.length : "-"
         div(class="flex-fill")
             p
             strong Following
